@@ -1,0 +1,359 @@
+:: StoryTitle
+CS200 - project
+
+
+:: StoryData
+{
+  "ifid": "270A23D3-1095-4B69-A1B6-9119FB87ED6D",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "GameScreen",
+  "zoom": 0.6
+}
+
+
+:: Agree to help {"position":"900,1225","size":"100,100"}
+There is a plan to take down Spectra, but to do so someone has to sabotage Spectra's AI.
+
+
+[[Act as a spy for the resistance, leaking information and sabatoging Spectra ->ressistanceSpy]]
+
+[[Report their plans to Spectra ->reportDismantle]]
+
+
+
+
+:: GameScreen {"position":"375,25","size":"100,100"}
+(align:"=><=")[''*Welcome to SpectraCorp*'']
+(align:"=><=")[''''***press play to start***'''']
+(align:"=><=")[[PLAY ->Intro]]
+
+
+:: Intro {"position":"525,25","size":"100,100"}
+A white interface loads on to your screen.
+
+
+Welcome to Spectra!
+
+Congratulations, applicant!  Your resume and interview has been reviewed and your application has been accepted!
+
+Sign [[here->sign]] to confirm. 
+
+
+
+
+:: assignemnt2 {"position":"1425,625","size":"100,100"}
+Your next assignment is to begin strengthening SpectraCorps AI, specifically the censorship algorithms.
+
+[[Begin working on strengthening the censorship algorithms. ->censorship]]
+
+[[Improve censorship algortims but sabatoge the surveillance algoritms ->censorSurve]]
+
+[[Sabotage the surveillace algoritms ->surveillance]]
+
+
+:: assignment1 {"position":"650,275","size":"100,100"}
+You open the assigment page and are greeted with very vauge intructions. 
+
+Encrypt the keys: 
+
+[[GAEOR ->enKey1]]
+
+
+
+
+
+
+:: betrayal {"position":"1400,1000","size":"100,100"}
+You may not have betrayed the resistance directly, but you continued working for Spectra
+which is basically the same thing. The resistance found you and is now holding you, hostage, to prevent you from helping Spectra get closer to their goal. 
+
+(align:"=><=")[[[Game Over->GameScreen]] ]
+
+
+:: caesarHint1 {"position":"525,400","size":"100,100"}
+Caesar cipher works by shifting each letter in the plaintext by a fixed number of positions in the alphabet. 
+
+For example, with a shift of 3, "HELLO" becomes "KHOOR"
+
+     H -> I -> J -> K
+     E -> F -> G -> H
+     L -> M -> N -> O
+     L -> M -> N -> O
+     O -> P -> Q -> R
+
+[[back ->enKey1]]
+
+
+:: caesarHint2 {"position":"775,525","size":"100,100"}
+Caesar cipher works by shifting each letter in the plaintext by a fixed number of positions in the alphabet. 
+
+For example, with a shift of 3, "HELLO" becomes "KHOOR"
+
+     H -> I -> J -> K
+     E -> F -> G -> H
+     L -> M -> N -> O
+     L -> M -> N -> O
+     O -> P -> Q -> R
+
+[[back ->enKey2]]
+
+
+
+:: censorSurve {"position":"1600,700","size":"100,100"}
+SpectraCorp is happy with your work on the censorship algorithms. They don't seem to notice you've tampered with the surveillance algorithms. 
+
+You've been given one last assignment to prove you are ready to join the board of executives. 
+
+Track and expose the resistance leaders. 
+You've already discovered the leaders' identities. 
+
+[[Expose their identidies to the board and continue your rise to the top ->sign2]]
+
+[[Pretend you can't find them, you can't expose them in good conscience ->corpEnd2]]
+
+
+:: censorSurveSP {"position":"1225,1225","size":"100,100"}
+(set: $rand to (random: 1, 5))
+SpectraCorp is happy with your work on the censorship algorithms. They don't seem to notice you've tampered with the surveillance algorithms. 
+
+The resistance is also happy with your tampering with the surveillance algorithms. 
+
+You've been given assignments from both Spectra and the Resistance that could change the 
+
+Spectra: Track and expose the resistance leaders. 
+
+Resistance: Leak classified Spectra files to the public, exposing their plans and sparking public outrage.
+
+
+[[Sell out the resistence leaders to Spectra ->sign2]]
+
+
+[[Leak Spectra files to the public ->resEnd1]]
+(if: $rand is 1)[
+[[Expose both Spectra and the Resistance for being flawed ->selfEnd1]]
+]
+(else:)[
+[[Expose both Spectra and the Resistance for being flawed->selfEnd2]]
+]
+
+
+:: censorship {"position":"1550,500","size":"100,100"}
+SpectraCorp is happy with your work on the censorship algorithms, you've earned their trust. You've been given one last assignment to prove you are ready to join the board of executives. 
+
+Track and expose the resistance leaders. 
+You've already discovered the leaders' identities. 
+
+[[Expose their identidies to the board and continue your rise to the top ->sign2]]
+
+[[Pretend you can't find them, you can't expose them in good conscience ->corpEnd2]]
+
+
+:: censorshipSP {"position":"1225,1100","size":"100,100"}
+SpectraCorp is happy with your work on the censorship algorithms. They don't seem to notice you've tampered with the surveillance algorithms. 
+
+You've been given one last assignment to prove you are ready to join the board of executives. 
+
+Track and expose the resistance leaders. 
+You've already discovered the leaders' identities. 
+
+[[Expose the resistance leaders, ignoring your promise to help the resistence->sign2]]
+
+[[Abandon your assignment and go back to the resistence ->betrayal]]
+
+
+:: completeAssign {"position":"650,650","size":"100,100"}
+You finished your first assigment as a Signal engineer at Spectra! You should be proud of yourself. 
+
+Just as you submit your work a  [[popup]] appears on your screen.
+
+
+
+
+:: corpEnd1 {"position":"1725,350","size":"100,100"}
+With your help SpectraCorp eradicates the resistance, executing the leaders. The new AI surveillance is more perceptive than ever. All electromagnetic activity is licensed and only those with specific credentials can access encrypted communication.
+
+With your loyalty to Spectra proven you are now on the board of executives, though infighting seems to be becoming an issue. 
+
+Spectra has achieved stability, efficiency, and security but at the cost of total information control. 
+
+(align:"=><=")[[[Game Over ->GameScreen]]]
+
+
+
+:: corpEnd2 {"position":"1725,500","size":"100,100"}
+Despite your resistance SpectraCorp finds and eradicates the resistance, executing their leaders. The new AI surveillance is more perceptive than ever. All electromagnetic activity is licensed and only those with specific credentials can access encrypted communication.
+
+Due to your failure to complete your final assignment, you were not offered a promotion to the board of executives.  
+
+Spectra has achieved stability, efficiency, and security but at the cost of total information control. 
+
+(align:"=><=")[[[Game over ->GameScreen]]]
+
+
+:: enKey1 {"position":"650,400","size":"100,100"}
+(set: $input1 to (prompt: "Encrypt the Key 'GAEOR' using a Caesar cypher of 3: ", ""))
+
+(if: $input1 is "JDHUR")[
+    [[This looks right! Time to do the next assignment!->enKey2]]
+]
+
+(else:)[
+	This doesn't look quite right... [[try again? ->enKey1]]   
+]
+
+[[Hint->caesarHint1]]
+
+
+:: enKey2 {"position":"650,525","size":"100,100"}
+(set: $input2 to (prompt: "Encrypt the Key 'ANIOM' using a Caesar cypher of 2 : ", ""))
+
+(if: $input2 is "CPKQO")[
+		[[This looks right! ->completeAssign]]
+        ]
+
+(else:)[
+	This doesn't look quite right... [[try again? ->enKey2]]   
+]      
+[[Hint->caesarHint2]]
+
+
+:: find {"position":"1050,800","size":"100,100"}
+After being given your new mission you begin to look into the message you received, tracing the signal. You finally find something when you get another pop-up on your screen. 
+
+(align:"=><=")[Spectra isn't what you think it is. ]
+
+(align:"=><=")[This is your last chance to stop them. ]
+
+[[Ignore it, they're just trying to get in your head. Keep looking for the source of the signal ->ignore]]
+
+[[Why would I need to stop them? ->investigate2]]
+
+
+:: ignore {"position":"1175,700","size":"100,100"}
+You ignore the message and eventually find the source of the signal. You find they are planning to dismantle the system that monitors signal transmissions. 
+
+
+[[Report your findings to corperate ->reportDismantle]]
+
+
+:: investigate {"position":"650,925","size":"100,100"}
+After tracing the frequency of the message and doing a little additional research you discover the message is from a resistance group. 
+
+[[Report your findings to corperate ->report]]
+
+[[Try and send a message to the resistance ->sendM]]
+
+
+
+
+:: investigate2 {"position":"1175,900","size":"100,100"}
+You're loyal to Spectra, but your curiosity gets the better of you. What could it mean, stop them? After some digging, you find a sort of 'underground' network, storing records you'd never seen. Spectra isn't just regulating frequencies, they are actively monitoring, modifying, and censoring anything they deem 'disruptive.'
+
+[[Act like you didn't see anthing and continue working for Spectra, maybe your loyalty will protect you ->assignemnt2]]
+
+[[Maybe the resistance is right...Try and send them a message ->sendM]]
+
+
+:: offer2 {"position":"925,800","size":"100,100"}
+Congratulations on your promotion! For your next assignment, we would like you to further investigate the group that messaged you previously. 
+
+ [[continue ->find]]
+
+
+:: popup {"position":"650,800","size":"100,100"}
+(align:"=><=")[You’re a part of it now. The choice is yours stay or go. ]
+(align:"=><=")[But know this]
+(align:"=><=")[No one walks away]
+
+[[Report the message to corperate ->report]]
+[[Try and find the source of the message ->investigate]]
+
+
+
+:: report {"position":"800,800","size":"100,100"}
+Only a few minutes pass and you get a message back from Spectra. 
+
+Thank you for reporting a possible threat to Spectra and the well-being of the network. We appreciate the work you are doing for the team. As a thank you we'd like to offer you a promotion and a new assignment. 
+
+[[Sign and accept the offer ->offer2]]
+
+
+:: reportDismantle {"position":"1300,625","size":"100,100"}
+You report to SpectraCorp that a resistance group is planning to take down the corporation. They thank you for your report and give you a new assignment. 
+
+[[VIEW ASSIGMENT ->assignemnt2]]
+
+
+:: resEnd1 {"position":"1225,1400","size":"100,100"}
+After exposing Spectra the public went wild, and with the surveillance hindered there was nothing SpectraCorp could do about it. 
+
+You've successfully dismantled Spectra, exposing its unethical filtering, gatekeeping, and monopolization.
+
+The resistance thanks you for your help in taking down Spectra. The world has full access to a decentralized open-source network beyond corporate control. Communication is free but also chaotic, without regulation misinformation will spread like wildfire. 
+
+
+(align:"=><=")[[[Game Over ->GameScreen]]]
+
+
+:: ressistanceSpy {"position":"1050,1225","size":"100,100"}
+The resistance is happy to have you. Their first request is that you attempt to sabotage SpectraCorps AI surveillance system. Conviently your next assignment is to begin strengthening SpectraCorps AI, specifically the censorship algorithms.
+
+[[Begin working on strengthening the censorship algorithms. ->censorshipSP]]
+
+[[Improve censorship algortims but sabatoge the surveillance algoritms ->censorSurveSP]]
+
+[[Sabotage the surveillace algoritms ->surveillance]]
+
+
+:: selfEnd1 {"position":"1475,1150","size":"100,100"}
+You expose both the resistance and Spectra for being flawed and surprisingly the public agrees with you. SpectraCorp is dismantled, still operating but not with its original power. The resistance isn't happy about a partially controlled network but agrees it's better than being fully under Spectra's control. 
+
+
+(align:"=><=")[[[Game over ->GameScreen]]]
+
+
+:: selfEnd2 {"position":"1475,1300","size":"100,100"}
+You expose both the resistance and Spectra for being flawed and while you get some backing you don't get enough people to side with you before Spectra finds the resistance and takes over.
+
+(align:"=><=")[[[Game over->GameScreen]]]
+
+
+:: sendM {"position":"900,1100","size":"100,100"}
+You attempt to send a message to the resistance, and you get a swift response. They explain that while Spectra has been protecting networks, they're also restricting and censoring some signals. 
+
+The resistance is asking for your help to put an end to Spectra's control, your inside knowledge  could be the key to putting this to an end. 
+
+[[Agree to help]]
+
+[[Report the resistance and stay loyal to Spectra ->reportDismantle]]
+
+
+:: sign {"position":"650,25","size":"100,100"}
+You are now a newly recruited Signal Engineer for SpectraCorp, a company devoted to keeping networks safe and running. As a signal engineer, you'll be in charge of data encryption and eliminating interference. 
+
+Working at Spectra has been your dream for a long time, protecting people and their data.
+
+[[Continue ->->signp2]]
+
+
+:: sign2 {"position":"1550,350","size":"100,100"}
+Thanks to you SpectraCorp is now on the road to world domination! For your loyalty, you are being offered a position on the board of executives. 
+
+[[Sign here->corpEnd1]] to accept the position.
+
+
+
+
+:: signp2 {"position":"650,150","size":"100,100"}
+A pop up appears on your screen. You just accepted the job and they're already making good use of you. 
+
+[[VIEW ASSIGNMENT->assignment1]]
+
+
+:: surveillance {"position":"1425,800","size":"100,100"}
+You didn't complete your assignment in time and Spectra noticed you tampered with the surveillance algorithms.
+
+Unfortunately for you, SpectraCorp does not take treason lightly, you will be executed for your crimes against SpectraCorp. 
+
+(align:"=><=")[[[Game Over ->GameScreen]]]
